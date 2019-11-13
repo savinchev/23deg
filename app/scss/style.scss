@@ -416,4 +416,60 @@
     display: none;
 }
     // end cost
+    // start portfolio
+.portfolio{
+    padding: 45px 0 35px;
+    &__title{
+        font-size: 36px;
+        line-height: 38px;
+        font-weight: 300;
+        color: #363636;
+        margin-bottom: 45px;
+    }
+    &__inner{
+        max-width: 1170px;
+        margin: 0 auto;
+        text-align: center;
+        &-btn{
+            display: inline-block;
+            border: 1px solid $aqua;
+            border-radius: 20px;
+            padding: 3px 30px;
+            button{
+                color: $aqua;
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: 300;
+                text-transform: uppercase;
+                border: none;
+                background-color: #fff;
+                padding: 13px 33px;
+                outline: none;
+                &:hover{
+                    background-color: $aqua;
+                    color: #fff;
+                    transform: scale(1.1, 1.2);
+                    border-radius: 7px;
+                }
+            }
+            button + button{
+                border-left: 1px solid $aqua;
+            }
+        }
+        &-items{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}
+.portfolio__item{
+    width: 360px;
+    height: 260px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 15px;
+}
+    // end portfolio
         

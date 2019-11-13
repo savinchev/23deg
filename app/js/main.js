@@ -12,4 +12,6 @@ $(function(){
         postfix: " м2",
     });
 
+
+    var mixer = mixitup('.portfolio__inner-items');
 });
