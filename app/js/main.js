@@ -7,8 +7,7 @@ $(function(){
     $(".js-range-slider").ionRangeSlider({
         min: 0,
         max: 250000,
-        from: 10000,
-        step: 4,
+        from: 100000,
         postfix: " м2",
     });
 

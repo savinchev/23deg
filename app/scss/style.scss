@@ -307,6 +307,11 @@
         text-align: center;
         padding: 10px;
         transition: all .3s;
+        background-color: transparent;
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px;
+        outline: none;
         &:hover{
             border: none;
             background-color: $aqua;
@@ -472,4 +477,174 @@
     margin: 15px;
 }
     // end portfolio
-        
+    // start about
+.about{
+    padding: 45px 0 60px;
+    background-color: #f5f9fa;
+    text-align: center;
+    &__title{
+        margin-bottom: 50px;
+    }
+    &__inner{
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+.about__item{
+    width: 262px;
+    margin: 15px;
+    &-image{
+        height: 64px;
+        margin: 0 auto 35px;
+        text-align: center;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 125px;
+            height: 1px;
+            background-color: $aqua;
+        }
+    }
+    &-text{
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 500;
+        color: #3f3f3f;
+    }
+}
+    // end about
+    // start process
+.process{
+    padding: 65px 0;
+    &__title{
+        margin-bottom: 50px;
+    }
+    &__item{
+        display: flex;
+        &-image{
+            img{
+                display: block;
+            }
+        }
+        &-text{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            line-height: 38px;
+            font-weight: 300;
+            color: #464646;
+        }
+    }
+    &__item:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+}
+    // end process
+    // start partners
+.partners{
+    padding: 45px 0 60px;
+    &__title{
+        margin-bottom: 60px;
+    }
+    &__inner{
+        display: flex;
+        align-items: center;
+        overflow: auto;
+        &-logo + .partners__inner-logo{
+            margin-left: 24px;
+        }
+    }
+}
+    // end partners
+    // start team
+.team{
+    padding: 55px 0 60px;
+    &__title{
+        margin-bottom: 65px;
+    }
+    &__inner{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+    &__slogan{
+        text-align: center;
+        padding: 0 112px;
+        position: relative;
+        color: #464646;
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            background-image: url(../images/quotes.png);
+            width: 47px;
+            height: 37px;
+            top: 0;
+            left: 0;
+        }
+        &::after{
+            top: auto;
+            left: auto;
+            right: 0;
+            bottom: 0;
+            transform: scale(-1,1);
+        }
+        &-title{
+            font-size: 30px;
+            line-height: 30px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        &-text{
+            line-height: 26px;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        &-author{
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        &-position{
+            font-weight: 300;
+        }
+    }
+}
+.team__item{
+    width: 230px;
+    margin: 0 65px 45px 65px;
+    text-align: center;
+    font-weight: 300;
+    &-avatar{
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            display: block;
+        }
+    }
+    &-name{
+        margin-bottom: 5px;
+        font-size: 24px;
+        line-height: 27px;
+        color: $aqua;
+    }
+    &-position{
+        font-size: 16px;
+        color: #464646;
+    }
+}
+    // end team
