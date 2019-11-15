@@ -62,3 +62,21 @@ a{
         transform: translateX(-50%);
     }
 }
+@media(max-width: 750px){
+    .title{
+        font-size: 31px;
+        line-height: 35px;
+        &::before{
+        width: 310px;
+        }
+    }
+    
+}
+@media(max-width: 355px){
+    .title{
+        &::before{
+        width: 295px;
+        }
+    }
+    
+}

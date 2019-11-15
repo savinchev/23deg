@@ -21,5 +21,8 @@
     "magnific-popup": "^1.1.0",
     "mixitup": "^3.3.1",
     "normalize.css": "^8.0.1"
+  },
+  "dependencies": {
+    "jquery.scrollbar": "^0.2.11"
   }
 }
