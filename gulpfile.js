@@ -25,6 +25,7 @@ gulp.task('style', function(){
         'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
         'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
         'node_modules/jquery.scrollbar/jquery.scrollbar.css',
+        'node_modules/animate.css/animate.css',
     ])
         .pipe(concat('libs.min.css'))
         // .pipe(cssmin())

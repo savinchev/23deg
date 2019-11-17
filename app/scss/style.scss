@@ -200,8 +200,9 @@
 }
 .header__scrolldown{
     position: absolute;
+    z-index: 5;
     left: 50%;
-    bottom: 55px;
+    bottom: 50px;
     transform: translateX(-50%);
 }
 
@@ -704,6 +705,9 @@
             height: 1px;
             background-color: $aqua;
         }
+        img{
+            transition: all .3s;
+        }
     }
     &-text{
         text-align: center;
@@ -711,6 +715,13 @@
         line-height: 20px;
         font-weight: 500;
         color: #3f3f3f;
+    }
+    &:hover{
+        .about__item-image{
+            img{
+                transform: scale(1.1);
+            }
+        }
     }
 }
     // end about
@@ -1150,7 +1161,7 @@
 }
     // start footer
 .footer{
-    margin-top: -5px;
+    margin-top: -7px;
     padding: 40px 0 50px;
     background-color: #24241f;
     &__inner{
