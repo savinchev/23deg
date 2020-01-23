@@ -143,9 +143,6 @@
         max-width: 954px;
         min-height: 135px;
         margin: 0 auto 20px;
-        background-image: url(../images/header-formbg.png);
-        background-repeat: no-repeat;
-        background-size: contain;
         position: relative;
         img{
             position: absolute;
@@ -158,7 +155,6 @@
             padding: 0 10px;
             display: flex;
             justify-content: space-around;
-            opacity: 0.8;
             input{
                 display: block;
                 max-width: 290px;
@@ -168,10 +164,14 @@
                 padding: 17px 25px;
                 border: none;
                 outline: none;
+                opacity: 0.8;
                 &::placeholder{
                     line-height: 24px;
                     font-weight: 300;
                     color: #606060;
+                }
+                &:focus {
+                    opacity: 1;
                 }
             }
             button{
@@ -188,7 +188,13 @@
                 background-color: $aqua;
                 color: #fff;
                 line-height: 20px;
-                font-weight: 500;   
+                font-weight: 500; 
+                opacity: .8;
+                transition: all .2s linear;
+                &:hover {
+                    opacity: 1;
+                    box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
+                }  
             }
         }
     }
@@ -305,6 +311,7 @@
         &:hover{
             .services__content-btn{
                 opacity: 0.8;
+                box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
             }
         }
         &-content{
@@ -457,11 +464,18 @@
         line-height: 24px;
         outline: none;
         cursor: pointer;
+        transition: all .2s linear;
         &:hover{
             border: none;
             background-color: $aqua;
             border: 1px solid transparent;
             opacity: 0.8;
+        }
+        &.active{
+            opacity: 1;
+            background-color: $aqua;
+            border: 1px solid transparent;
+            box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
         }
     }
     &-text{
@@ -477,6 +491,7 @@
         color: #464646;
         font-size: 14px;
         text-align: center;
+        transition: all .3s linear;
     }
     &-text.medium{
         left: 50%;
@@ -486,13 +501,27 @@
         left: auto;
         right: 0;
     }
-}
-.package__item{
-    &:hover{
-       .package__item-text{
-        opacity: 1;
-       } 
+    &::before {
+        content: "";
+        opacity: 0;
+        position: absolute;
+        top: 31px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 15px;
+        height: 15px;
+        transition: all .3s linear;
+        border: 15px solid transparent; 
+        border-bottom: 15px solid #fff;
     }
+}
+.package__item:hover{
+    &::before{
+        opacity: 1;
+    }
+    .package__item-text{
+        opacity: 1;
+    } 
 }
 .cost__inner-result{
     .result__item{
@@ -515,7 +544,12 @@
         background-color: $aqua;
         border-radius: 25px;
         padding: 18px 30px;
-        opacity: 0.8;
+        opacity: .8;
+        transition: all .2s linear;
+        &:hover {
+            opacity: 1;
+            box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
+        }
     }
     .result__subtext{
         font-size: 14px;
@@ -579,6 +613,9 @@
             .package__item-text.light,
             .package__item-text.medium,
             .package__item-text.full{
+                display: none;
+            }
+            &::before{
                 display: none;
             }
         }
@@ -690,6 +727,8 @@
 .about__item{
     width: 262px;
     margin: 15px;
+    padding: 10px 0;
+    transition: all .2s linear;
     &-image{
         height: 64px;
         margin: 0 auto 35px;
@@ -717,11 +756,7 @@
         color: #3f3f3f;
     }
     &:hover{
-        .about__item-image{
-            img{
-                transform: scale(1.1);
-            }
-        }
+        box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
     }
 }
     // end about
@@ -806,7 +841,7 @@
     }
 }
 .scrollbar-rail > .scroll-element .scroll-bar{
-    background-color: $aqua;olor: $aqua;
+    background-color: $aqua;
     cursor: pointer;
 }
 .scrollbar-rail > .scroll-element .scroll-element_size{
@@ -876,10 +911,12 @@
     }
 }
 .team__item{
-    width: 230px;
+    width: 250px;
+    padding: 10px;
     margin: 0 65px 45px 65px;
     text-align: center;
     font-weight: 300;
+    transition: all .2s linear;
     &-avatar{
         margin-bottom: 15px;
         display: flex;
@@ -898,6 +935,9 @@
     &-position{
         font-size: 16px;
         color: #464646;
+    }
+    &:hover {
+        box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
     }
 }
 @media(max-width: 795px){
@@ -962,7 +1002,7 @@
         a{
             text-decoration: underline;
             font-size: 18px;
-            font-weight: 300;weight: 300;
+            font-weight: 300;
             color: $aqua;
         }
     }
@@ -1022,10 +1062,14 @@
                 color: 606060;
                 border: none;
                 outline: none;
+                opacity: 0.8;
                 &::placeholder{
                     font-size: 13px;
                     font-weight: 300;
                     color: #606060;
+                }
+                &:focus {
+                    opacity: 1;
                 }
             }
             input + input{
@@ -1041,10 +1085,14 @@
                 resize: none;
                 color: 606060;
                 outline: none;
+                opacity: 0.8;
                 &::placeholder{
                     font-size: 13px;
                     font-weight: 300;
                     color: #606060;
+                }
+                &:focus {
+                    opacity: 1;
                 }
             }
             button{
@@ -1058,7 +1106,13 @@
                 color: #fff;
                 font-size: 15px;
                 line-height: 20px;
-                font-weight: 500; 
+                font-weight: 500;
+                opacity: .8;
+                transition: all .2s linear;
+                &:hover {
+                    opacity: 1;
+                    box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
+                }
             }
         }
         &-social{
@@ -1077,10 +1131,16 @@
                         &::before{
                             position: absolute;
                             padding: 6px;
-                            border: 1px solid #fff;
+                            border: 1px solid transparent;
                             border-radius: 2px;
-                            top: -2px;
+                            top: -4px;
                             left: 0;
+                            transition: all .2s linear;
+                        }
+                        &:hover {
+                            &::before {
+                                border: 1px solid #fff;
+                            }
                         }
                     }
                 }
@@ -1194,8 +1254,14 @@
             a{
                 &::before{
                     padding: 6px;
-                    border: 1px solid #fff;
+                    border: 1px solid transparent;
                     border-radius: 2px;
+                    transition: all .2s linear;
+                }
+                &:hover {
+                    &::before {
+                        border: 1px solid #fff;
+                    }
                 }
             }
             a + a{
@@ -1254,7 +1320,7 @@
     opacity: 0.5;
     position: fixed;
     z-index: 11;
-    bottom: 40px;
+    bottom: 30px;
     right: 30px;
     display:none;
     text-indent: -9999px;
@@ -1263,7 +1329,29 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0px 3px 10px 2px rgba($aqua, .5);
+
+    animation-duration: 2s;
+    animation-name: scrollup-dance;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.33, 0.46, 0.43, 0.97);
+    animation-iteration-count: infinite;
 }
+
+@keyframes scrollup-dance {
+    from {
+        bottom: 30px;
+    }
+
+    50% {
+        bottom: 50px;
+    }
+
+    to {
+        bottom: 30px;
+    }
+}
+
 @media(max-width: 615px){
     .scrollup{
         right: 15px;
